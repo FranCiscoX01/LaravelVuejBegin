@@ -1899,8 +1899,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    user: Array
+  },
   data: function data() {
     return {
       name: "",
@@ -2035,6 +2040,18 @@ __webpack_require__.r(__webpack_exports__);
       this.content = "";
       this.price = "";
       this.update = 0;
+    },
+    FormOpenpay: function FormOpenpay(data) {
+      var me = this;
+      var url = 'crud-vuejs-axios-update/' + me.id;
+      axios.get(url).then(function (response) {
+        axios.get('mount-openpay').then(function (response) {
+          console.log(response);
+        });
+        console.log(data.price);
+      })["catch"](function (error) {
+        console.log(error);
+      });
     }
   },
   mounted: function mounted() {
@@ -31406,18 +31423,9 @@ var render = function() {
                     [_c("i", { staticClass: "far fa-trash-alt" })]
                   ),
                   _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-success",
-                      on: {
-                        click: function($event) {
-                          return _vm.pay()
-                        }
-                      }
-                    },
-                    [_c("i", { staticClass: "fab fa-btc" })]
-                  )
+                  _vm.caca != undefined
+                    ? _c("div", [_vm._m(1, true)])
+                    : _vm._e()
                 ])
               ])
             }),
@@ -31592,6 +31600,14 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Acciones")])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "btn btn-success" }, [
+      _c("i", { staticClass: "fas fa-cart-plus" })
     ])
   }
 ]

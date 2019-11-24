@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <script src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" data-auto-replace-svg="nest"></script>
         <title>Laravel</title>
 
         <!-- Fonts -->
@@ -69,6 +69,7 @@
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/') }}">Home </a>
+                        <a><i class="fas fa-shopping-cart"></i></a>
                         <a href="{{ url('/') }}">{{Auth::user()->name}}</a>
                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
                             Logout

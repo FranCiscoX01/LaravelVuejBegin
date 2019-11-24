@@ -10,10 +10,14 @@
     <script src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" data-auto-replace-svg="nest"></script>
 </head>
 <body>
-    <center><h1>CRUD</h1></center>
+    <center><h1>CRUD - {{ json_encode($user) }}</h1></center>
     <br>
     <div id="app">
+    @auth
+        <crud-axios-component :user="{{ json_encode($user) }}"></crud-axios-component>
+    @else
         <crud-axios-component></crud-axios-component>
+    @endauth
     </div>
 
 </body>

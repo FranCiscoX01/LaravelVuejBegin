@@ -39,6 +39,11 @@ Route::delete('crud-vuejs-axios/{id}', 'CrudController@deleteItems');
 Route::get('new-show-crud', 'CrudController@getProffesion')->name('new-show-crud');
 
 /**
+ * Del CRUD al formulario de Openpay pasando el monto
+ */
+Route::get('mount-openpay', 'CrudController@PassMountOpenpay');
+
+/**
  * OpenPay
  */
 Route::get('openpay', 'OpenPayController@index')->name('openpay');

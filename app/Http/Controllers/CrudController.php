@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\CrudProffesion;
 use DB;
+use Auth;
 
 /**
  * Las funciones no retornan una vista ya que son llamadas por axios
@@ -14,7 +15,14 @@ use DB;
 class CrudController extends Controller
 {
     public function index(){
-        return view('crud');
+
+        if (!empty(Auth::user()->name)) {
+            $user = Auth::user()->name;
+        } else {
+            $user = '';
+        }
+
+        return view('crud', compact('user'));
     }
 
     public function storeItem(Request $request){
@@ -68,5 +76,9 @@ class CrudController extends Controller
         $show = CrudProffesion::ShowCrud();
 
         return view('showcrud', compact('show'));
+    }
+
+    public function PassMountOpenpay(Request $request){
+        return view('/');
     }
 }
