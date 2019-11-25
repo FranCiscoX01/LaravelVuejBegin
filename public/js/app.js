@@ -2220,6 +2220,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     show: Array
@@ -31896,14 +31898,16 @@ var render = function() {
     _c(
       "tbody",
       _vm._l(_vm.show, function(s) {
-        return _c("tr", [
+        return _c("tr", { key: s }, [
           _c("th", { attrs: { scope: "row" } }, [_vm._v(_vm._s(s.id))]),
           _vm._v(" "),
           _c("td", [_vm._v(_vm._s(s.name))]),
           _vm._v(" "),
           _c("td", [_vm._v(_vm._s(s.content))]),
           _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(s.price))])
+          _c("td", [_vm._v(_vm._s(s.price))]),
+          _vm._v(" "),
+          _vm._m(1, true)
         ])
       }),
       0
@@ -31923,7 +31927,23 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Contenido")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Precio")])
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Precio")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("PDF")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c("a", { attrs: { href: "" } }, [
+        _c(
+          "button",
+          { staticClass: "btn btn-info", attrs: { type: "button" } },
+          [_vm._v("PDF")]
+        )
       ])
     ])
   }
@@ -44491,8 +44511,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/Laravel/LaravelBegin/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/Laravel/LaravelBegin/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/LaravelBegin/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/LaravelBegin/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ }),
