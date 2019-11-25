@@ -37,6 +37,7 @@ Route::delete('crud-vuejs-axios/{id}', 'CrudController@deleteItems');
  * Mostrar Consulta con Vue
  */
 Route::get('new-show-crud', 'CrudController@getProffesion')->name('new-show-crud');
+Route::get('register-crud/pdf/{id}', 'CrudController@PDF');
 
 /**
  * Del CRUD al formulario de Openpay pasando el monto

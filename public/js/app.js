@@ -1897,10 +1897,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -2040,18 +2036,6 @@ __webpack_require__.r(__webpack_exports__);
       this.content = "";
       this.price = "";
       this.update = 0;
-    },
-    FormOpenpay: function FormOpenpay(data) {
-      var me = this;
-      var url = 'crud-vuejs-axios-update/' + me.id;
-      axios.get(url).then(function (response) {
-        axios.get('mount-openpay').then(function (response) {
-          console.log(response);
-        });
-        console.log(data.price);
-      })["catch"](function (error) {
-        console.log(error);
-      });
     }
   },
   mounted: function mounted() {
@@ -2200,6 +2184,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -31423,11 +31413,7 @@ var render = function() {
                       }
                     },
                     [_c("i", { staticClass: "far fa-trash-alt" })]
-                  ),
-                  _vm._v(" "),
-                  _vm.caca != undefined
-                    ? _c("div", [_vm._m(1, true)])
-                    : _vm._e()
+                  )
                 ])
               ])
             }),
@@ -31602,14 +31588,6 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Acciones")])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("button", { staticClass: "btn btn-success" }, [
-      _c("i", { staticClass: "fas fa-cart-plus" })
     ])
   }
 ]
@@ -31898,7 +31876,7 @@ var render = function() {
     _c(
       "tbody",
       _vm._l(_vm.show, function(s) {
-        return _c("tr", { key: s }, [
+        return _c("tr", [
           _c("th", { attrs: { scope: "row" } }, [_vm._v(_vm._s(s.id))]),
           _vm._v(" "),
           _c("td", [_vm._v(_vm._s(s.name))]),
@@ -31907,7 +31885,11 @@ var render = function() {
           _vm._v(" "),
           _c("td", [_vm._v(_vm._s(s.price))]),
           _vm._v(" "),
-          _vm._m(1, true)
+          _c("td", [
+            _c("a", { attrs: { href: "register-crud/pdf/" + s.id } }, [
+              _vm._m(1, true)
+            ])
+          ])
         ])
       }),
       0
@@ -31937,15 +31919,14 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("a", { attrs: { href: "" } }, [
-        _c(
-          "button",
-          { staticClass: "btn btn-info", attrs: { type: "button" } },
-          [_vm._v("PDF")]
-        )
-      ])
-    ])
+    return _c(
+      "button",
+      { staticClass: "btn btn-info", attrs: { type: "button" } },
+      [
+        _c("i", { staticClass: "far fa-file-pdf" }),
+        _vm._v(" \n                    PDF")
+      ]
+    )
   }
 ]
 render._withStripped = true

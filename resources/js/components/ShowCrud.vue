@@ -10,12 +10,18 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="s in show" :key="s">
+            <tr v-for="s in show">
                 <th scope="row">{{ s.id }}</th>
                 <td>{{ s.name }}</td>
                 <td>{{ s.content }}</td>
                 <td>{{ s.price }}</td>
-                <td><a href=""><button type="button" class="btn btn-info">PDF</button></a></td>
+                <td>
+                    <a :href="'register-crud/pdf/'+s.id">
+                        <button type="button" class="btn btn-info"> 
+                            <i class="far fa-file-pdf"></i> 
+                        PDF</button>
+                    </a>
+                </td>
             </tr>
         </tbody>
     </table>

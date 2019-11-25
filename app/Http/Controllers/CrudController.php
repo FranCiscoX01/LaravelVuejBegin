@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\CrudProffesion;
 use DB;
 use Auth;
+use PDF;
 
 /**
  * Las funciones no retornan una vista ya que son llamadas por axios
@@ -80,5 +81,12 @@ class CrudController extends Controller
 
     public function PassMountOpenpay(Request $request){
         return view('/');
+    }
+
+    public function PDF($id){
+        $data = CrudProffesion::find($id);
+
+        $pdf = PDF::loadView('pdf.crud', compact('data'));
+        return $pdf->download('register_crud_'.$data->id.'.pdf');
     }
 }

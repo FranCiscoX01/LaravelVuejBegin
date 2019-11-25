@@ -24,10 +24,6 @@
                                     <button class="btn btn-info" @click="loadFieldsUpdate(task)"><i class="far fa-edit"></i></button>
                                     <!--Botón que borra la tarea que seleccionemos-->
                                     <button class="btn btn-danger" @click="deleteTask(task)"><i class="far fa-trash-alt"></i></button>
-                                    <!--Botón que comprar con Openpay-->
-                                    <div v-if="caca != undefined">
-                                        <button class="btn btn-success"><i class="fas fa-cart-plus"></i></button>
-                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -204,17 +200,6 @@ export default {
                 this.price = "";
                 this.update = 0;
         },
-        FormOpenpay(data){
-            let me =this;
-            let url = 'crud-vuejs-axios-update/'+me.id;
-            axios.get(url).then(function (response) {
-                axios.get('mount-openpay').then(function(response){ console.log(response) });
-                console.log(data.price);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-        }
     },
     mounted() {
         this.getTasks();
