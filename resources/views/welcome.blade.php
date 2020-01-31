@@ -93,6 +93,7 @@
                 </div>
 
                 <div class="links">
+                    <a href="{{ route('google-chart-pdf') }}">PDF with Google Charts</a>
                     <a href="{{ route('contact') }}">Send Email</a>
                     <a href="{{ route('show-crud') }}">CRUD Axios-VueJS-Laravel</a>
                     <a href="{{ route('new-show-crud') }}">Show CRUD</a>

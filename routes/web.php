@@ -48,5 +48,9 @@ Route::get('mount-openpay', 'CrudController@PassMountOpenpay');
  * OpenPay
  */
 Route::get('openpay', 'OpenPayController@index')->name('openpay');
+/**
+ * PDF with Google Charts
+ */
+Route::get('google-chart-pdf', 'ChartPDFController@index')->name('google-chart-pdf');
 
 
